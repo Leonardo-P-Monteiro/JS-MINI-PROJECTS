@@ -1,5 +1,3 @@
-// Here, we catch out the tags that will be used on our script and put it on variables.
-
 const calcular = document.getElementById('calcular')
 
 function imc () {
@@ -11,7 +9,7 @@ function imc () {
 
     if (nome !== '' && altura !== '' && peso !== '') {
         
-        const valorIMC = (peso/ (altura * altura)).toFixed(2);
+        const valorIMC = (peso / (altura * altura)).toFixed(2);
 
         let classificacao = '';
 
@@ -38,7 +36,7 @@ function imc () {
 
 }
 
-calcular.addEventListener('click', imc)
+calcular.addEventListener('click', imc);
 
 
 
@@ -53,6 +51,6 @@ calcular.addEventListener('click', imc)
 
 
 
-
+const nome1 = document.getElementById('nome')
 /* playing with the code */
-document.write(nome.value) 
+document.write(nome1.value)
