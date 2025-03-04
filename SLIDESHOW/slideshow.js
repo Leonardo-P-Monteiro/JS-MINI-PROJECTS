@@ -11,7 +11,8 @@ const images = [
     {'id':'7', 'url':'./image/image-7.jpg'}
 ]
 
-const container = document.querySelector('#container-items');
+const containerItems = document.querySelector('#container-items');
+
 
 const loadImages = (images, container) => {
     images.forEach(image => {
@@ -23,5 +24,21 @@ const loadImages = (images, container) => {
     });
 }
 
-// loadImages(images, container)
+loadImages(images, containerItems)
 
+let items = document.querySelectorAll('.item');
+
+const previous = () => {
+    containerItems.appendChild(items[0]);
+    items = document.querySelectorAll('.item');
+    
+}
+
+const next = () => {
+    const lastItem = items[items.length - 1]
+    containerItems.insertBefore(lastItem, items[0]);
+    items = document.querySelectorAll('.item')
+}
+
+document.getElementById('previous').addEventListener('click', previous);
+document.getElementById('next').addEventListener('click', next);
