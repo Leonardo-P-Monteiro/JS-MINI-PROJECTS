@@ -28,17 +28,16 @@ loadImages(images, containerItems)
 
 let items = document.querySelectorAll('.item');
 
-const previous = () => {
+const next = () => {
     containerItems.appendChild(items[0]);
     items = document.querySelectorAll('.item');
-    
 }
 
-const next = () => {
+const previous = () => {
     const lastItem = items[items.length - 1]
     containerItems.insertBefore(lastItem, items[0]);
     items = document.querySelectorAll('.item')
 }
 
-document.getElementById('previous').addEventListener('click', previous);
 document.getElementById('next').addEventListener('click', next);
+document.getElementById('previous').addEventListener('click', previous);
