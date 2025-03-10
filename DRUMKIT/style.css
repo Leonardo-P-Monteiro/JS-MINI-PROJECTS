@@ -22,10 +22,35 @@ main {
     color: #ffcc00;
     margin: 20vh auto;
     font-size: calc(5vh + 20px);
+    text-shadow: 0 0 10px black,
+                 0 0 10px black,
+                 0 0 10px black,
+                 0 0 10px black;
 }
 
 .container {
-    background-color: white;
+    /* background-color: white; */
     width: 90vw;
     height: 100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.key{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-size: calc(3vw + 20px);
+    background-color: #000000BB;
+    border: 3px solid white;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 30%;
 }
