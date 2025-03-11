@@ -10,7 +10,7 @@ const sons = {
     'J': 'snare.wav',
     'K': 'tink.wav',
     'L': 'tom.wav',
-}
+};
 
 const criarDiv = (texto) => {
     const div = document.createElement('div');
@@ -18,10 +18,28 @@ const criarDiv = (texto) => {
     div.textContent = texto;
     div.id = texto; 
     document.getElementById('container').appendChild(div);
-}
+};
 
 const exibir = (sons) => {
-    Object.keys(sons).forEach(criarDiv)
-}
+    Object.keys(sons).forEach(criarDiv);
+};
+
+const tocarSom = (letra) => {
+    const audio = new Audio(`./sounds/${sons[letra]}`);
+    audio.play();
+};
+
+
+
+const ativarDir = (evento) => {
+    const letra = evento.target.id;
+    letraPermitida = sons.hasOwnProperty(letra)
+    if (letraPermitida) {
+        tocarSom(letra);
+    };
+};
+
 
 exibir(sons)
+document.getElementById('container').addEventListener('click', ativarDir);
+
