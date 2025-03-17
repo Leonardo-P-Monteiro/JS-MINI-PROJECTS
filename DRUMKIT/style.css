@@ -53,8 +53,11 @@ main {
     user-select: none;
     cursor: pointer;
     border-radius: 30%;
+    transition: transform .2s;
 }
 
-.key:hover {
-    
+.active {
+    transform: scale(1.2);
+    border-color: #ffcc00;
+    box-shadow: 0 0 50px #ffcc00;
 }
