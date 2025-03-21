@@ -15,14 +15,27 @@ const operacaoPendente = () => {
 }
 
 const calcular = () => {
-    if (operacaoPendente()){
+    if (operacaoPendente()) {
         const input2 = parseFloat(display.textContent);
-        novoNumero = true
-        if (operador == '+') {
-            atualizarDisplay(input1 + input2);
-        }
+        novoNumero = true;
+        const resultado = eval(`${input1}${operador}${input2}`); // Evitar usar isso, pois abre brechas de segurança.
+        atualizarDisplay(resultado);
     }
-}
+
+    // if (operacaoPendente()){
+    //     const input2 = parseFloat(display.textContent);
+    //     novoNumero = true
+    //     if (operador == '+') {
+    //         atualizarDisplay(input1 + input2);
+    //     } else if (operador == '-') {
+    //         atualizarDisplay(input1 - input2);
+    //     } else if (operador == '*') {
+    //         atualizarDisplay(input1 * input2);
+    //     } else if (operador == '/') {
+    //         atualizarDisplay(input1 / input2);
+    //     } 
+    // }
+};
 
 const atualizarDisplay = (texto) => {
     if (novoNumero){
@@ -51,5 +64,10 @@ function selecionarOperador (event) {
 
 operadores.forEach(operador => operador.addEventListener('click', selecionarOperador));
 
+const ativarIgual = () => {
+    calcular();
+    operador = undefined
+};
+document.getElementById('igual').addEventListener('click', ativarIgual)
 
 // Paramos no minuto 31:40 = https://www.youtube.com/watch?v=oRZQ5EZOrQk&list=PLDgemkIT111AzoS1rB61sgMJbsEA4pyD2&index=7
